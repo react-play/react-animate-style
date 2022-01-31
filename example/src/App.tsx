@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-animate-css'
+import { Animation } from 'react-animate-css'
 import 'react-animate-css/dist/index.css'
 
+console.log(Animation)
+
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [animate, setAnimate] = React.useState(true)
+  return (<div style={{ display: 'flex', height: '100vh', justifyContent: 'center', alignItems: 'center' }}>
+    <Animation animationIn='bounceIn' animationInDuration={5000} animationOut='bounceOut' animationInDelay={1000} animationOutDelay={5000} isVisible={animate}><div>Test</div></Animation><br />
+    <button onClick={() => setAnimate(!animate)}>{animate ? 'Exit' : 'in'}</button>
+  </div>)
 }
 
 export default App

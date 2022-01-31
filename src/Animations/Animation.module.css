@@ -1,0 +1,16 @@
+/**
+ * Hidding content before entrance animation and after exit animation
+ */
+.react_animate_css_hide {
+  display: none;
+}
+
+.delay_in {
+  animation-delay: attr(data-delay-in ms, 0s);
+  --animate-delay: attr(data-delay-in ms, 0s);
+  content: attr(data-delay-in string, 0s);
+}
+
+.delay_out {
+  animation-delay: attr(data-delay-out ms, 0s);
+}

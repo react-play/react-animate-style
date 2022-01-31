@@ -1,6 +1,9 @@
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# temporary dont store exemples, there are not ready yet
+example
+
 # dependencies
 node_modules
 
