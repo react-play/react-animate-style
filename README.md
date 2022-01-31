@@ -2,7 +2,7 @@
 
 > Easy animate react app with animate.css library
 
-[![Release](https://img.shields.io/github/v/release/react-play/react-animate-style?style=for-the-badge)](https://github.com/react-play/react-animate-style/releases) [![Node](https://img.shields.io/node/v/react-play/react-animate-style?style=for-the-badge)](https://www.npmjs.com/package/react-play/react-animate-style) ![TypeScript](https://img.shields.io/npm/types/typescript?style=for-the-badge) ![Build for React](https://img.shields.io/badge/Build%20for-React-61dafb?style=for-the-badge) [![Test](https://img.shields.io/appveyor/tests/react-play/react-animate-style?style=for-the-badge)](https://github.com/react-play/react-animate-style/actions/)
+[![Release](https://img.shields.io/github/v/release/react-play/react-animate-style?style=for-the-badge)](https://www.npmjs.com/package/react-animate-style) ![TypeScript](https://img.shields.io/npm/types/typescript?style=for-the-badge) [![Build](https://img.shields.io/github/workflow/status/react-play/react-animate-style/Auto%20Release%20and%20publish?style=for-the-badge)](https://github.com/react-play/react-animate-style/actions/) [![Build for React](https://img.shields.io/badge/Build%20for-React-61dafb?style=for-the-badge)](https://reactjs.org)
 
 ## Install
 **With npm :**
