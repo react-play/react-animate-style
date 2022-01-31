@@ -5,9 +5,14 @@
 [![Release](https://img.shields.io/github/v/release/react-play/react-animate-style?style=for-the-badge)](https://github.com/react-play/react-animate-style/releases) [![Node](https://img.shields.io/node/v/react-play/react-animate-style?style=for-the-badge)](https://www.npmjs.com/package/react-play/react-animate-style) ![TypeScript](https://img.shields.io/npm/types/typescript?style=for-the-badge) ![Build for React](https://img.shields.io/badge/Build%20for-React-61dafb?style=for-the-badge) [![Test](https://img.shields.io/appveyor/tests/react-play/react-animate-style?style=for-the-badge)](https://github.com/react-play/react-animate-style/actions/)
 
 ## Install
-
+**With npm :**
 ```bash
 npm install --save react-animate-style
+```
+
+**With yarn :**
+```bash
+yarn add react-animate-style
 ```
 
 ## Usage
