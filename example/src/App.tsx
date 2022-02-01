@@ -3,8 +3,6 @@ import React from 'react'
 import { Animation } from 'react-animate-css'
 import 'react-animate-css/dist/index.css'
 
-console.log(Animation)
-
 const App = () => {
   const [animate, setAnimate] = React.useState(true)
   return (<div style={{ display: 'flex', height: '100vh', justifyContent: 'center', alignItems: 'center' }}>

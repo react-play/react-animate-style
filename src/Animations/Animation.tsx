@@ -119,14 +119,16 @@ const Animation = ({
   style = null,
   className = null,
   children,
-  ref = null
+  ref = undefined
 }: Props) => {
   style = {
     ...style,
     animationDelay: `${isVisible ? animationInDelay : animationOutDelay}ms`,
     animationDuration: `${isVisible ? animationInDuration : animationInDuration}ms`,
   }
-  console.log(classes)
+
+  const nodeRef = React.useRef<HTMLDivElement>(null)
+
   return (
     <CSSTransition
       in={isVisible}
@@ -140,6 +142,7 @@ const Animation = ({
       mountOnEnter
       unmountOnExit
       ref={ref}
+      nodeRef={nodeRef}
       timeout={{
         enter: animationInDelay + animationInDuration,
         exit: animationOutDelay + animationOutDuration,
