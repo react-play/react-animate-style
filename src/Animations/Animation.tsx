@@ -1,9 +1,8 @@
 import React from 'react'
 import { CSSTransition } from 'react-transition-group';
 import 'animate.css/animate.min.css';
-import classes from './Animation.module.css';
 
-type CssAnimation = 'bounce' | 'flash' | 'pulse' | 'rubberBand' | 'shakeX' | 'shakeY' | 'headShake' | 'swing' | 'tada' | 'wobble' | 'jello' | 'heartBeat' | 'backInDown' | 'backInLeft' | 'backInRight' | 'backInUp' | 'backOutDown' | 'backOutLeft' | 'backOutRight' | 'backOutUp' | 'bounceIn' | 'bounceInDown' | 'bounceInLeft' | 'bounceInRight' | 'bounceInUp' | 'bounceOut' | 'bounceOutDown' | 'bounceOutLeft' | 'bounceOutRight' | 'bounceOutUp' | 'fadeIn' | 'fadeInDown' | 'fadeInDownBig' | 'fadeInLeft' | 'fadeInLeftBig' | 'fadeInRight' | 'fadeInRightBig' | 'fadeInUp' | 'fadeInUpBig' | 'fadeInTopLeft' | 'fadeInTopRight' | 'fadeInBottomLeft' | 'fadeInBottomRight' | 'fadeOut' | 'fadeOutDown' | 'fadeOutDownBig' | 'fadeOutLeft' | 'fadeOutLeftBig' | 'fadeOutRight' | 'fadeOutRightBig' | 'fadeOutUp' | 'fadeOutUpBig' | 'fadeOutTopLeft' | 'fadeOutTopRight' | 'fadeOutBottomRight' | 'fadeOutBottomLeft' | 'flip' | 'flipInX' | 'flipInY' | 'flipOutX' | 'flipOutY' | 'lightSpeedInRight' | 'lightSpeedInLeft' | 'lightSpeedOutRight' | 'lightSpeedOutLeft' | 'rotateIn' | 'rotateInDownLeft' | 'rotateInDownRight' | 'rotateInUpLeft' | 'rotateInUpRight' | 'rotateOut' | 'rotateOutDownLeft' | 'rotateOutDownRight' | 'rotateOutUpLeft' | 'rotateOutUpRight' | 'hinge' | 'jackInTheBox' | 'rollIn' | 'rollOut' | 'zoomIn' | 'zoomInDown' | 'zoomInLeft' | 'zoomInRight' | 'zoomInUp' | 'zoomOut' | 'zoomOutDown' | 'zoomOutLeft' | 'zoomOutRight' | 'zoomOutUp' | 'slideInDown' | 'slideInLeft' | 'slideInRight' | 'slideInUp' | 'slideOutDown' | 'slideOutLeft' | 'slideOutRight' | 'slideOutUp'
+export type CssAnimation = 'bounce' | 'flash' | 'pulse' | 'rubberBand' | 'shakeX' | 'shakeY' | 'headShake' | 'swing' | 'tada' | 'wobble' | 'jello' | 'heartBeat' | 'backInDown' | 'backInLeft' | 'backInRight' | 'backInUp' | 'backOutDown' | 'backOutLeft' | 'backOutRight' | 'backOutUp' | 'bounceIn' | 'bounceInDown' | 'bounceInLeft' | 'bounceInRight' | 'bounceInUp' | 'bounceOut' | 'bounceOutDown' | 'bounceOutLeft' | 'bounceOutRight' | 'bounceOutUp' | 'fadeIn' | 'fadeInDown' | 'fadeInDownBig' | 'fadeInLeft' | 'fadeInLeftBig' | 'fadeInRight' | 'fadeInRightBig' | 'fadeInUp' | 'fadeInUpBig' | 'fadeInTopLeft' | 'fadeInTopRight' | 'fadeInBottomLeft' | 'fadeInBottomRight' | 'fadeOut' | 'fadeOutDown' | 'fadeOutDownBig' | 'fadeOutLeft' | 'fadeOutLeftBig' | 'fadeOutRight' | 'fadeOutRightBig' | 'fadeOutUp' | 'fadeOutUpBig' | 'fadeOutTopLeft' | 'fadeOutTopRight' | 'fadeOutBottomRight' | 'fadeOutBottomLeft' | 'flip' | 'flipInX' | 'flipInY' | 'flipOutX' | 'flipOutY' | 'lightSpeedInRight' | 'lightSpeedInLeft' | 'lightSpeedOutRight' | 'lightSpeedOutLeft' | 'rotateIn' | 'rotateInDownLeft' | 'rotateInDownRight' | 'rotateInUpLeft' | 'rotateInUpRight' | 'rotateOut' | 'rotateOutDownLeft' | 'rotateOutDownRight' | 'rotateOutUpLeft' | 'rotateOutUpRight' | 'hinge' | 'jackInTheBox' | 'rollIn' | 'rollOut' | 'zoomIn' | 'zoomInDown' | 'zoomInLeft' | 'zoomInRight' | 'zoomInUp' | 'zoomOut' | 'zoomOutDown' | 'zoomOutLeft' | 'zoomOutRight' | 'zoomOutUp' | 'slideInDown' | 'slideInLeft' | 'slideInRight' | 'slideInUp' | 'slideOutDown' | 'slideOutLeft' | 'slideOutRight' | 'slideOutUp'
 
 export interface Props {
 
@@ -25,7 +24,7 @@ export interface Props {
    * @example 'fadeIn'
    * @example 'fadeInDown'
    */
-  animationIn?: CssAnimation | null,
+  animationIn?: CssAnimation | '',
 
   /**
    * The animation to use when the component unmounts or when isVisible change to false.
@@ -37,7 +36,7 @@ export interface Props {
    * @example 'fadeOut'
    * @example 'fadeOutDown'
    */
-  animationOut?: CssAnimation | null,
+  animationOut?: CssAnimation | '',
 
   /**
    * The delay in miliseconds to wait before start the entrance animation.
@@ -98,7 +97,7 @@ export interface Props {
    * @default null
    * @example 'my-class'
    */
-  className?: string | null,
+  className?: string,
 
   /**
    * The ref to attach to the animation container.
@@ -109,15 +108,15 @@ export interface Props {
 }
 
 const Animation = ({
-  animationIn = null,
-  animationOut = null,
+  animationIn = '',
+  animationOut = '',
   animationInDelay = 0,
   animationOutDelay = 0,
   animationInDuration = 1000,
   animationOutDuration = 1000,
   isVisible = false,
   style = null,
-  className = null,
+  className = '',
   children,
   ref = undefined
 }: Props) => {
@@ -137,8 +136,6 @@ const Animation = ({
       enter={Boolean(animationIn)}
       exit={Boolean(animationOut)}
       style={style}
-      data-delay-in={animationInDelay}
-      data-delay-out={animationOutDelay}
       mountOnEnter
       unmountOnExit
       ref={ref}
@@ -149,14 +146,14 @@ const Animation = ({
       }}
       classNames={{
         appear: isVisible ? `animate__animated` : 'react_animate_css_hide',
-        appearActive: isVisible ? `animate__animated animate__${animationIn} ${animationInDelay ? classes.delay_in : ''}` : 'react_animate_css_hide',
-        appearDone: isVisible ? `animate__animated animate__${animationIn} ${animationInDelay ? classes.delay_in : ''}` : 'react_animate_css_hide',
+        appearActive: isVisible ? `animate__animated animate__${animationIn}` : 'react_animate_css_hide',
+        appearDone: isVisible ? `animate__animated animate__${animationIn}` : 'react_animate_css_hide',
         enter: `animate__animated`,
-        enterActive: `animate__animated animate__${animationIn} ${animationInDelay ? classes.delay_in : ''}`,
-        enterDone: `animate__animated animate__${animationIn} ${animationInDelay ? classes.delay_in : ''}`,
+        enterActive: `animate__animated animate__${animationIn}`,
+        enterDone: `animate__animated animate__${animationIn}`,
         exit: `animate__animated`,
-        exitActive: `animate__animated animate__${animationOut} ${animationInDelay ? 'animate__delay-out' : ''}`,
-        exitDone: `animate__animated animate__${animationOut} ${animationInDelay ? 'animate__delay-out' : ''}`,
+        exitActive: `animate__animated animate__${animationOut}`,
+        exitDone: `animate__animated animate__${animationOut}`,
       }}
     ><div ref={nodeRef}>{children}</div></CSSTransition>
   )
