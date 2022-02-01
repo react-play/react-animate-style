@@ -158,7 +158,7 @@ const Animation = ({
         exitActive: `animate__animated animate__${animationOut} ${animationInDelay ? 'animate__delay-out' : ''}`,
         exitDone: `animate__animated animate__${animationOut} ${animationInDelay ? 'animate__delay-out' : ''}`,
       }}
-    >{children}</CSSTransition>
+    ><div ref={nodeRef}>{children}</div></CSSTransition>
   )
 }
 
